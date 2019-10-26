@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make: one
+  model: MyString
+  vin: MYSTRING0101010
+
+two:
+  make: two
+  model: MyModel
+  vin: 0101001011MyString
+
+three:
+  make: Toyota
+  model: Camry
+  vin: 1234567890K
