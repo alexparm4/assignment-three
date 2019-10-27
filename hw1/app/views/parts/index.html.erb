@@ -1,13 +1,17 @@
+
 <p id="notice"><%= notice %></p>
-
-<h1>Parts</h1>
-
-<%= form_tag(search_parts_url, method: "get") do %>   <!-- Add search for to html for parts -->
-    <%= label_tag(:query, "Search by name:") %>
-    <%= text_field_tag(:query) %>
+<img src="https://aparm.000webhostapp.com/C&PCimages/parts_title.png">
+<div class="jumbotron bg-dark move-up">
+<div class="float-left">
+<%= link_to 'New Part', new_part_path %>
+</div>
+<div class="float-right">
+<%= form_tag(search_parts_url, method: "get") do %>   <!-- Add search for parts -->
+    <%= label_tag(:query, "") %>
+    <%= text_field_tag(:query, nil, placeholder: "Search by name") %>
     <%= submit_tag("Search") %>
 <% end %>
-
+</div>
 <table>
   <thead>
     <tr>
@@ -27,7 +31,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Part', new_part_path %>

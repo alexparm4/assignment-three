@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'home/index'
+  root to:"home#index"
   resources :cars do   #cars made into a searchable collection,
     collection do       #citation: Slide 30 from 06RoutesSearch
       get 'search'

@@ -1,12 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Cars</h1>
-
+<img src="https://aparm.000webhostapp.com/C&PCimages/cars_title.png">
+<div class="jumbotron bg-dark move-up">
+<div class="float-left">
+<%= link_to 'New Car', new_car_path %>
+</div>
+<div class="float-right">
 <%= form_tag(search_cars_url, method: "get") do %>   <!-- Add search for to html for VIN and model of car -->
-  <%= label_tag(:query, "Search by VIN or Model:") %>
-  <%= text_field_tag(:query) %>
+  <%= label_tag(:query, "") %>
+  <%= text_field_tag(:query, nil, placeholder: "Search by VIN or model") %>
+  
   <%= submit_tag("Search") %>
 <% end %>
+</div>
+<br><br>
 
 <table>
   <thead>
@@ -31,7 +37,8 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Car', new_car_path %>
+

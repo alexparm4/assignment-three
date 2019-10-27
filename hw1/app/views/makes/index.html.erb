@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Makes</h1>
-
-<%= form_tag(search_makes_url, method: "get") do %>   <!-- Add search for to html for makes -->
-  <%= label_tag(:query, "Search by name or country:") %>
-  <%= text_field_tag(:query) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
+<img src="https://aparm.000webhostapp.com/C&PCimages/makes_title.png">
+<div class="jumbotron bg-dark move-up">
+  <div class="float-left">
+  <%= link_to 'New Make', new_make_path %>
+  </div>
+  <div class="float-right">
+    <%= form_tag(search_makes_url, method: "get") do %>   <!-- Add search for to html for makes -->
+    <%= label_tag(:query, "") %>
+    <%= text_field_tag(:query, nil, placeholder: "Search by name or country") %>
+    <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+<br><br>
 <table>
   <thead>
     <tr>
@@ -29,7 +33,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Make', new_make_path %>
